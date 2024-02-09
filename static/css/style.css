@@ -356,3 +356,92 @@ footer{
     bottom: 0;
     left: 0;
 }
+/* Add this media query for screens smaller than 900px */
+@media screen and (max-width: 900px) {
+  nav {
+    padding: 20px 2rem; /* Adjust padding for smaller screens */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 93px;
+    width: 100%;
+    justify-content: center;
+    backdrop-filter: blur(20px);
+    background: rgba(209, 209, 209, 0.95);
+    padding: 1rem 0;
+  }
+
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links ul li {
+    margin: 1rem 0;
+  }
+
+  .nav-toggler {
+    display: block;
+    font-size: 25px;
+  }
+
+  #open {
+    display: none;
+  }
+
+  #toggler {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  #close {
+    display: block;
+  }
+
+  section {
+    margin: 2vh; /* Adjust margin for smaller screens */
+    padding: 10vh; /* Adjust padding for smaller screens */
+  }
+
+  .section-title {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .about-desc {
+    width: 100%; /* Make the about description take full width */
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .services-container {
+    grid-template-columns: repeat(1, 1fr); /* Change to a single column for smaller screens */
+    gap: 20px;
+  }
+
+  .card-img img {
+    min-height: auto; /* Adjust min-height for smaller screens */
+  }
+
+  .skills-container {
+    flex-direction: column;
+  }
+
+  .row {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
