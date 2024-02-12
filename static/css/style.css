@@ -409,4 +409,8 @@ footer{
     form button{
     	width: 50%;
 	}
+    section{
+	padding:5vh;
+    }
 }
+
