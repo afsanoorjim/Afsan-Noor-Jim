@@ -410,7 +410,9 @@ footer{
     	width: 50%;
 	}
     section{
-	padding:5vh;
+	padding-top:15vh;
+	padding-left:5vh;
+	padding-right:5vh;
     }
 }
 
