@@ -401,8 +401,8 @@ footer{
         -webkit-text-stroke: 2px;
     }
     .home-img{
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
 }
 @media screen and (max-width:500px){
