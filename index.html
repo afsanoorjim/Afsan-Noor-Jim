@@ -460,19 +460,19 @@
               <form id="contactForm" class="glass-card p-4 contact-form">
                 <div class="row g-3">
                   <div class="col-md-6 form-floating">
-                    <input type="text" class="form-control" id="name" placeholder="Name" required />
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
                     <label for="name">Name</label>
                   </div>
                   <div class="col-md-6 form-floating">
-                    <input type="email" class="form-control" id="email" placeholder="Email" required />
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
                     <label for="email">Email</label>
                   </div>
                   <div class="col-12 form-floating">
-                    <input type="text" class="form-control" id="subject" placeholder="Subject" required />
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required />
                     <label for="subject">Subject</label>
                   </div>
                   <div class="col-12 form-floating">
-                    <textarea class="form-control" id="message" placeholder="Message" rows="5" required></textarea>
+                    <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5" required></textarea>
                     <label for="message">Message</label>
                   </div>
                   <div class="col-12">
@@ -513,5 +513,6 @@
     <script src="https://unpkg.com/typed.js@2.0.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/email.js"></script>
   </body>
 </html>

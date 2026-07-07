@@ -134,25 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const form = document.getElementById("contactForm");
-  const formMessage = document.getElementById("formMessage");
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!name || !email || !subject || !message) {
-      formMessage.textContent = "Please complete all fields before sending.";
-      formMessage.className = "mt-3 text-danger";
-      return;
-    }
-
-    formMessage.textContent = "Thanks! Your message is ready to be connected to a backend service.";
-    formMessage.className = "mt-3 text-success";
-    form.reset();
-  });
+  // The actual contact form submission is handled in js/email.js.
 
   const glow = document.querySelector(".cursor-glow");
   document.addEventListener("mousemove", (event) => {
