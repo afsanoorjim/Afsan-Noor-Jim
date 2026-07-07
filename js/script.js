@@ -136,20 +136,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.getElementById("contactForm");
   const formMessage = document.getElementById("formMessage");
-  const publicKey = form?.getAttribute("data-public-key")?.trim();
-
-  if (form && publicKey && !publicKey.includes("YOUR_")) {
-    emailjs.init(publicKey);
-  }
-
-  form?.addEventListener("submit", async (event) => {
+  form?.addEventListener("submit", (event) => {
     event.preventDefault();
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const subject = document.getElementById("subject").value.trim();
     const message = document.getElementById("message").value.trim();
-    const submitButton = form.querySelector("button[type='submit']");
-    const originalButtonText = submitButton?.innerHTML || "";
 
     if (!name || !email || !subject || !message) {
       formMessage.textContent = "Please complete all fields before sending.";
@@ -157,37 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const serviceId = form.getAttribute("data-service-id")?.trim();
-    const templateId = form.getAttribute("data-template-id")?.trim();
-
-    if (!serviceId || !templateId || serviceId.includes("YOUR_") || templateId.includes("YOUR_")) {
-      formMessage.textContent = "EmailJS is not configured yet. Add your service ID and template ID to the form.";
-      formMessage.className = "mt-3 text-warning";
-      return;
-    }
-
-    if (typeof window.emailjs === "undefined") {
-      formMessage.textContent = "EmailJS failed to load. Please refresh the page and try again.";
-      formMessage.className = "mt-3 text-danger";
-      return;
-    }
-
-    submitButton.disabled = true;
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-
-    try {
-      await emailjs.sendForm(serviceId, templateId, form, publicKey);
-      form.reset();
-      formMessage.textContent = "Thanks! Your message has been sent successfully.";
-      formMessage.className = "mt-3 text-success";
-    } catch (error) {
-      console.error("EmailJS submission failed:", error);
-      formMessage.textContent = "Sorry, your message could not be sent right now. Please try again later.";
-      formMessage.className = "mt-3 text-danger";
-    } finally {
-      submitButton.disabled = false;
-      submitButton.innerHTML = originalButtonText;
-    }
+    formMessage.textContent = "Thanks! Your message is ready to be connected to a backend service.";
+    formMessage.className = "mt-3 text-success";
+    form.reset();
   });
 
   const glow = document.querySelector(".cursor-glow");
